@@ -12,16 +12,16 @@ from linebot.models import (
 )
 
 # 引入 ChatBot
-#from chatterbot import ChatBot
+from chatterbot import ChatBot
 
 # 建立一個 ChatBot 物件
-# chatbot = ChatBot(
-#    'Ron Obvious',
-#    trainer = 'chatterbot.trainers.ChatterBotCorpusTrainer'
-#)
+ chatbot = ChatBot(
+    'Ron Obvious',
+    trainer = 'chatterbot.trainers.ChatterBotCorpusTrainer'
+)
 
 # 基於英文的自動學習套件
-# chatbot.train("chatterbot.corpus.english")
+ chatbot.train("chatterbot.corpus.english")
 
 # 與 ChatBot 對話，並且取得回應
 # chatbot.get_response("Hello, how are you today?")
@@ -53,7 +53,7 @@ def handle_text_message(event):
     text = event.message.text #message from user
     line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage(text= text)) #reply the same message from user
+        TextSendMessage(text= chatbot.get_response(text))) #reply the same message from user
     
 
 import os
