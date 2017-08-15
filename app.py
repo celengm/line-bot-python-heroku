@@ -23,9 +23,7 @@ chatbot = ChatBot(
 
 
 chatbot.train([
-    "1",
-    "2",
-    "3"
+    '1'
 ])
     
 # 建立一個 ChatBot 物件
@@ -81,10 +79,6 @@ def handle_text_message(event):
     bot_response = chatbot.get_response(text)
     if (bot_response == '1'):
         text = 'fffffff' 
-    elif (bot_response == '2'):
-        text = 'kkkkkkk'
-    else (bot_response == '3'):
-        text = 'ppppppp'
     line_bot_api.reply_message(
      event.reply_token,
      TextSendMessage(text= text)) #reply the same message from user
