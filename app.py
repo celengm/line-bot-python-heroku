@@ -53,7 +53,7 @@ def handle_text_message(event):
     text = event.message.text #message from user
     line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage(text= chatbot.get_response(text))) #reply the same message from user
+        TextSendMessage(text= 'you are deenow')) #reply the same message from user
     
 
 import os
