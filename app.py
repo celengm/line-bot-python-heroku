@@ -75,11 +75,11 @@ def callback():
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_text_message(event):   
-    test2 = '0'
+    text2 = '0'
     text = event.message.text #message from user
     bot_response = chatbot.get_response(text)
     if (bot_response == '1'):
-        text2 = bot_response
+        text2 = 'ffffff'
     line_bot_api.reply_message(
      event.reply_token,
      TextSendMessage(text= text2)) #reply the same message from user
