@@ -78,7 +78,7 @@ def handle_text_message(event):
     text2 = '0'
     text = event.message.text #message from user
     bot_response = str(chatbot.get_response(text))
-    text3 = len(bot_reponse)
+    text3 = str(len(bot_reponse))
     #if bot_response == '':
     #    text2 = 'ffffff'
     line_bot_api.reply_message(
