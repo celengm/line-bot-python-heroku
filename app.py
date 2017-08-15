@@ -23,9 +23,9 @@ chatbot = ChatBot(
 
 
 chatbot.train([
-    '1',
-    '2',
-    '3'
+    "1",
+    "2",
+    "3"
 ])
     
 # 建立一個 ChatBot 物件
