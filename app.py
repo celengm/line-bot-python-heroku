@@ -80,7 +80,7 @@ def handle_text_message(event):
     bot_response = chatbot.get_response(text)
     if bot_response == '1':
         text2 = 'ffffff'
-    else 
+    else : 
         text2 = 'kerker'
     line_bot_api.reply_message(
      event.reply_token,
