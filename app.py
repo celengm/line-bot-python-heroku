@@ -71,7 +71,7 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_text_message(event):
     text = event.message.text #message from user
-    bot_response = chatbot.get_response(text);
+    bot_response = chatbot.get_response(text)
     line_bot_api.reply_message(
         event.reply_token,
         TextSendMessage(text= bot_response)) #reply the same message from user
