@@ -23,9 +23,9 @@ chatbot = ChatBot(
 
 
 chatbot.train([
-    'Hi, can I help you?',
-    'Sure, I'd to book a flight to Iceland.',
-    'Your flight has been booked.'
+    '1',
+    '2',
+    '3'
 ])
     
 # 建立一個 ChatBot 物件
@@ -79,11 +79,15 @@ def callback():
 def handle_text_message(event):   
     text = event.message.text #message from user
     bot_response = chatbot.get_response(text)
-    #if (bot_response == '1'):
-    #    text = 'fffffff'    
+    if (bot_response == '1'):
+        text = 'fffffff' 
+    elif (bot_response == '2'):
+        text = 'kkkkkkk'
+    else (bot_response == '3'):
+        text = 'ppppppp'
     line_bot_api.reply_message(
      event.reply_token,
-     TextSendMessage(text= bot_response)) #reply the same message from user
+     TextSendMessage(text= text)) #reply the same message from user
     
 
 import os
