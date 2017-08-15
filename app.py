@@ -15,18 +15,6 @@ from linebot.models import (
 # -*- coding: utf-8 -*-
 from chatterbot import ChatBot
 
-# Create a new chat bot named Charlie
-chatbot = ChatBot(
-    'Charlie',
-    trainer='chatterbot.trainers.ListTrainer'
-)
-
-chatbot.train([
-    "Hi, can I help you?",
-    "Sure, I'd to book a flight to Iceland.",
-    "Your flight has been booked."
-])
-
 # 建立一個 ChatBot 物件
 #chatbot = ChatBot("Ron Obvious")
 #chatbot = ChatBot(
@@ -76,12 +64,24 @@ def callback():
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_text_message(event):
+    
+    from chatterbot import ChatBot
+    # Create a new chat bot named Charlie
+    chatbot = ChatBot(
+        'Charlie',
+        trainer='chatterbot.trainers.ListTrainer'
+    )
+
+    chatbot.train([
+        "Hi, can I help you?",
+        "Sure, I'd to book a flight to Iceland.",
+        "Your flight has been booked."
+    ])
     text = event.message.text #message from user
     bot_response = chatbot.get_response(text)
-    line_bot_api.push_message('<to>', TextSendMessage(text='Hello World!'))
-    #line_bot_api.reply_message(
-    #  event.reply_token,
-    #   TextSendMessage(text= "123")) #reply the same message from user
+    line_bot_api.reply_message(
+     event.reply_token,
+     TextSendMessage(text= "123")) #reply the same message from user
     
 
 import os
