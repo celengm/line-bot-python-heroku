@@ -11,6 +11,8 @@ from linebot.models import (
     MessageEvent, TextMessage, TextSendMessage,
 )
 
+from chatterbot import ChatBot
+
 app = Flask(__name__)
 
 line_bot_api = LineBotApi('P+we2j4wXb1v9mkAc05nbbLgG/eR6xWJP9zC6ysOBe4UHIve81uvbLwx+qvNxL6U31BbSTSmccIjwuwBt0WG8bpIMpaeb9tq83L3XJh+kRAZUp1KpoOkSbv0MPFq9hQFQfPP4High409X9iZe6c3RgdB04t89/1O/w1cDnyilFU=') #Your Channel Access Token
