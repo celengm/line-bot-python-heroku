@@ -76,8 +76,8 @@ def callback():
 def handle_text_message(event):   
     text = event.message.text #message from user
     bot_response = chatbot.get_response(text)
-    if (bot_response == "1"):
-        text = "fffffff"    
+    if (bot_response == '1'):
+        text = 'fffffff'    
     line_bot_api.reply_message(
      event.reply_token,
      TextSendMessage(text= text)) #reply the same message from user
