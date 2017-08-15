@@ -13,8 +13,8 @@ from linebot.models import (
 
 app = Flask(__name__)
 
-line_bot_api = LineBotApi('') #Your Channel Access Token
-handler = WebhookHandler('') #Your Channel Secret
+line_bot_api = LineBotApi('P+we2j4wXb1v9mkAc05nbbLgG/eR6xWJP9zC6ysOBe4UHIve81uvbLwx+qvNxL6U31BbSTSmccIjwuwBt0WG8bpIMpaeb9tq83L3XJh+kRAZUp1KpoOkSbv0MPFq9hQFQfPP4High409X9iZe6c3RgdB04t89/1O/w1cDnyilFU=') #Your Channel Access Token
+handler = WebhookHandler('8f1d406e2fc3b4a61bec51ba95751a1f') #Your Channel Secret
 
 @app.route("/callback", methods=['POST'])
 def callback():
@@ -36,7 +36,8 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_text_message(event):
     text = event.message.text #message from user
-
+    if text is '123':
+        text = 'you are deenow'
     line_bot_api.reply_message(
         event.reply_token,
         TextSendMessage(text=text)) #reply the same message from user
