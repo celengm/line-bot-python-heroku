@@ -12,8 +12,6 @@ from linebot.models import (
 )
 
 
-
-
 # -*- coding: utf-8 -*-
 from chatterbot import ChatBot
 
@@ -80,9 +78,15 @@ def callback():
 def handle_text_message(event):
     text = event.message.text #message from user
     bot_response = chatbot.get_response(text)
-    line_bot_api.reply_message(
-        event.reply_token,
-        TextSendMessage(text= bot_response)) #reply the same message from user
+    try:
+        line_bot_api.push_message('<to>', TextSendMessage(text = bot_response))
+    except LineBotApiError as e:
+    # error handle
+        line_bot_api.push_message('<to>', TextSendMessage(text='Hello World!'))
+    
+    #line_bot_api.reply_message(
+    #    event.reply_token,
+    #    TextSendMessage(text= bot_response)) #reply the same message from user
     
 
 import os
