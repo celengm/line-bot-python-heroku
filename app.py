@@ -12,7 +12,7 @@ from linebot.models import (
 )
 
 # 引入 ChatBot
-# from chatterbot import ChatBot
+from chatterbot import ChatBot
 
 # 建立一個 ChatBot 物件
 # chatbot = ChatBot(
