@@ -23,10 +23,28 @@ chatbot = ChatBot(
 # 基於英文的自動學習套件
 #chatbot.train("chatterbot.corpus.english")
 
-chatbot.train("chatterbot.corpus.chinese.greetings")
+#chatbot.train("chatterbot.corpus.chinese.greetings")
 
 # 與 ChatBot 對話，並且取得回應
 # chatbot.get_response("Hello, how are you today?")
+
+from chatterbot.trainers import ListTrainer
+
+conversation = [
+    "Hello",
+    "Hi there!",
+    "How are you doing?",
+    "I'm doing great.",
+    "That is good to hear",
+    "Thank you.",
+    "You're welcome."
+]
+
+chatbot.set_trainer(ListTrainer)
+chatbot.train(conversation)
+
+
+
 
 app = Flask(__name__)
 
