@@ -15,10 +15,11 @@ from linebot.models import (
 from chatterbot import ChatBot
 
 # 建立一個 ChatBot 物件
-chatbot = ChatBot(
-    'Johnson test' #,
+chatbot = ChatBot("Ron Obvious")
+#chatbot = ChatBot(
+ #   'Ron Obvious' ,
     #trainer = 'chatterbot.trainers.ChatterBotCorpusTrainer'
-)
+#)
 
 # 基於英文的自動學習套件
 #chatbot.train("chatterbot.corpus.english")
