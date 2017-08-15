@@ -21,7 +21,7 @@ chatbot = ChatBot(
 )
 
 # 基於英文的自動學習套件
-# chatbot.train("chatterbot.corpus.english")
+chatbot.train("chatterbot.corpus.english")
 
 # 與 ChatBot 對話，並且取得回應
 # chatbot.get_response("Hello, how are you today?")
