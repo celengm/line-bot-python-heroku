@@ -28,7 +28,7 @@ from chatterbot import ChatBot
 #])
     
 # 建立一個 ChatBot 物件
-chatbot = ChatBot("Ron Obvious")
+#chatbot = ChatBot("Ron Obvious")
 chatbot = ChatBot(
    'Johnson Test' ,
     trainer = 'chatterbot.trainers.ChatterBotCorpusTrainer'
@@ -76,7 +76,7 @@ def callback():
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_text_message(event):   
-    text2 = '0'
+    #text2 = '0'
     text = event.message.text #message from user
     bot_response = chatbot.get_response(text)
     #if bot_response == '1':
