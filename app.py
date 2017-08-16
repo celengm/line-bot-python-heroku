@@ -16,28 +16,28 @@ from linebot.models import (
 from chatterbot import ChatBot
 
 # Create a new chat bot named Charlie
-#chatbot = ChatBot(
-#    'Charlie',
-#    trainer='chatterbot.trainers.ListTrainer'
+chatbot = ChatBot(
+    'Charlie',
+    trainer='chatterbot.trainers.ListTrainer'
+)
 
-#)
-
-
-#chatbot.train([
-#    "1"
-#])
+chatbot.train([
+    "Hi, can I help you?",
+    "Sure, I'd to book a flight to Iceland.",
+    "Your flight has been booked."
+])
     
 # 建立一個 ChatBot 物件
 #chatbot = ChatBot("Ron Obvious")
-chatbot = ChatBot(
-   'Johnson Test' ,
-    trainer = 'chatterbot.trainers.ChatterBotCorpusTrainer'
-)
+#chatbot = ChatBot(
+#   'Johnson Test' ,
+#    trainer = 'chatterbot.trainers.ChatterBotCorpusTrainer'
+#)
 
 # 基於英文的自動學習套件
 #chatbot.train("chatterbot.corpus.english")
 
-chatbot.train("chatterbot.corpus.chinese.greetings")
+#chatbot.train("chatterbot.corpus.chinese.greetings")
 
 # 與 ChatBot 對話，並且取得回應
 # chatbot.get_response("Hello, how are you today?")
