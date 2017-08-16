@@ -16,27 +16,28 @@ from linebot.models import (
 from chatterbot import ChatBot
 
 # Create a new chat bot named Charlie
-chatbot = ChatBot(
-    'Charlie',
-    trainer='chatterbot.trainers.ListTrainer'
-)
+#chatbot = ChatBot(
+#    'Charlie',
+#    trainer='chatterbot.trainers.ListTrainer'
+
+#)
 
 
-chatbot.train([
-    "1"
-])
+#chatbot.train([
+#    "1"
+#])
     
 # 建立一個 ChatBot 物件
-#chatbot = ChatBot("Ron Obvious")
-#chatbot = ChatBot(
-#   'Johnson Test' ,
-#    trainer = 'chatterbot.trainers.ChatterBotCorpusTrainer'
-#)
+chatbot = ChatBot("Ron Obvious")
+chatbot = ChatBot(
+   'Johnson Test' ,
+    trainer = 'chatterbot.trainers.ChatterBotCorpusTrainer'
+)
 
 # 基於英文的自動學習套件
 #chatbot.train("chatterbot.corpus.english")
 
-#chatbot.train("chatterbot.corpus.chinese.greetings")
+chatbot.train("chatterbot.corpus.chinese.greetings")
 
 # 與 ChatBot 對話，並且取得回應
 # chatbot.get_response("Hello, how are you today?")
@@ -77,19 +78,15 @@ def callback():
 def handle_text_message(event):   
     text2 = '0'
     text = event.message.text #message from user
-    try:
-        bot_response = chatbot.get_response(text)
+    bot_response = chatbot.get_response(text)
     #if bot_response == '1':
     #    text2 = 'ffffff'
     #else : 
     #    text2 = 'kerker'
-        line_bot_api.reply_message(
-            event.reply_token,
-            TextSendMessage(text= bot_response)) #reply the same message from user
-    except LineBotApiError as e:
-        line_bot_api.reply_message(
-            event.reply_token,
-            TextSendMessage(text= text)) #reply the same message from user
+    line_bot_api.reply_message(
+        event.reply_token,
+        TextSendMessage(text= bot_response)) #reply the same message from user
+   
     
 
 import os
