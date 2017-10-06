@@ -54,8 +54,8 @@ chatbot.train([
 
 app = Flask(__name__)
 
-line_bot_api = LineBotApi('P+we2j4wXb1v9mkAc05nbbLgG/eR6xWJP9zC6ysOBe4UHIve81uvbLwx+qvNxL6U31BbSTSmccIjwuwBt0WG8bpIMpaeb9tq83L3XJh+kRAZUp1KpoOkSbv0MPFq9hQFQfPP4High409X9iZe6c3RgdB04t89/1O/w1cDnyilFU=') #Your Channel Access Token
-handler = WebhookHandler('8f1d406e2fc3b4a61bec51ba95751a1f') #Your Channel Secret
+line_bot_api = LineBotApi('Renikv7AVXUcdHSeAlAISUTMMIi/pnGSDccD7jWL7vMWOUE75iBF/6rPQNuj3iWjoWfCTAIncsIdwzFq/Oy9RC5shrlPbgOR271tDSVRDbnmHzGA8CyS4pLBEuHjSzaKSxiIwv5ULvfNuajDzTa0CQdB04t89/1O/w1cDnyilFU=') #Your Channel Access Token
+handler = WebhookHandler('4f0930a748a24428e8b089842d6f5c6d') #Your Channel Secret
 
 @app.route("/callback", methods=['POST'])
 def callback():
